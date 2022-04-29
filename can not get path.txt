@@ -1,0 +1,10 @@
+If you open your React application and navigate between both paths, everything should be fine. However, if you navigate via the browser's URL bar to /about, you will get something like Cannot GET /about. That's because Webpack doesn't know what to serve on this path, because Webpack only knows about the root path / for your application. In order to serve your React application on every path, you need to tell Webpack and its configuration that it should fallback for every path to your entry point:
+
+...
+
+module.exports = {
+  ...
+  devServer: {
+    historyApiFallback: true,
+  },
+};

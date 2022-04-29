@@ -1,0 +1,27 @@
+Getting Started
+To begin, you'll need to install file-loader:
+
+$ npm install file-loader --save-dev
+Import (or require) the target file(s) in one of the bundle's files:
+
+file.js
+
+import img from './file.png';
+Then add the loader to your webpack config. For example:
+
+webpack.config.js
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
+};

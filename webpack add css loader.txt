@@ -1,0 +1,30 @@
+Getting Started
+⚠ To use css-loader, webpack@5 is required
+
+To begin, you'll need to install css-loader:
+
+npm install --save-dev css-loader
+or
+
+yarn add -D css-loader
+or
+
+pnpm add -D css-loader
+Then add the plugin to your webpack config. For example:
+
+file.js
+
+import css from "file.css";
+webpack.config.js
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+};
+And run webpack via your preferred method.
